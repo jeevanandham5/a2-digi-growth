@@ -1,25 +1,34 @@
-# Freelance portfolio landing page
+# A2 Digi Growth landing page
 
-A single-page site for A2 Digi Growth, a freelance web design and marketing studio: static websites, Shopify stores, poster design, digital marketing, SEO and solar scheme applications. Plain HTML, CSS and a little JavaScript. No build step.
+Single-page site for A2 Digi Growth, a freelance web design and marketing studio: static websites, Shopify stores, poster design, digital marketing, SEO and solar scheme applications.
+
+Stack: Vite, React 18, TypeScript, Tailwind CSS v4, Framer Motion.
 
 ## Edit your details
 
-Open `script.js` and change the `SITE` object at the top: owner name, city, WhatsApp number, email, Instagram handle and the prefilled WhatsApp message. The page fills those in everywhere.
+Open `src/site.ts` and change the `site` object: owner name, city, WhatsApp number, email, Instagram handle and the prefilled WhatsApp message. The page reads those everywhere. The same file holds the case studies, services, process steps and ticker words.
 
 Other things you may want to change:
 
-- `index.html`: the About paragraph and the case study text.
-- `assets/`: replace the two screenshots when you add new work. Keep roughly a 1280 x 889 size.
-- The portrait block in About is a placeholder. Swap the `.portrait-placeholder` div for an `<img>` of yourself.
+- `public/assets/`: replace the screenshots when you add new work. `*-full.jpg` are tall page captures used for the hover-scroll effect, `*.jpg` are the hero crops.
+- The "A2" portrait block in `src/components/About.tsx` is a placeholder. Swap it for an `<img>` of yourself.
 
 ## Run it locally
 
 ```bash
-node serve.js
+npm install
+```
+
+```bash
+npm run dev
 ```
 
 Then open http://localhost:5173.
 
-## Deploy
+## Build and deploy
 
-It is static, so any host works: GitHub Pages, Netlify, Cloudflare Pages or Vercel. Point the host at the repository root.
+```bash
+npm run build
+```
+
+The static output lands in `dist/`. Any static host works: GitHub Pages, Netlify, Cloudflare Pages or Vercel. Point the host at the repo with build command `npm run build` and output directory `dist`.
